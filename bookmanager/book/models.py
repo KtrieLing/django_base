@@ -14,6 +14,9 @@ from django.db import models
 """
 class BookInfo(models.Model):
     name = models.CharField(max_length=10)
+    #重写__str__方法让admin来显示书籍名字
+    def __str__(self):
+        return self.name
 
 
 class PeopleInfo(models.Model):
@@ -21,3 +24,6 @@ class PeopleInfo(models.Model):
     gender = models.BooleanField()
     #外键约束，人物属于哪本书
     book = models.ForeignKey(BookInfo,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

@@ -25,7 +25,8 @@ SECRET_KEY = '*h60(ytw$am80ht2%uq6$f03@s9-4-xst(ds_(&)!m=h6=8x+d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.176.166',
+                 '127.0.0.1']
 
 
 # Application definition
@@ -37,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'book'   #方案1
+    'book'   #方案1
     # 'book.apps.BookConfig' #方案2
 ]
 
@@ -75,6 +76,9 @@ WSGI_APPLICATION = 'bookmanager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
+#sqlite3也是关系型数据库
+#过渡
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -105,9 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'zh-Hans'    #'en-us'
+#设置时区
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
